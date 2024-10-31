@@ -5,7 +5,6 @@
         <div class="description">{{ fieldset.description|safe }}</div>
     {% endif %}
     {% for line in fieldset %}
-    {% with field_len = line.fields|length %}
 
             <div class="form-group row form-row {% if field_len == 1 and line.errors or field.errors %} has-danger errors{% endif %}{% if not line.has_visible_field %} hidden{% endif %}{% for field in line %}{% if field.field.name %} field-{{ field.field.name }}{% endif %}{% if field.field.is_hidden %} hidden{% endif %}{% endfor %}">
 
@@ -62,6 +61,5 @@
                 {% endfor %}
 
             </div>
-        {% endwith %}
     {% endfor %}
 </fieldset>
